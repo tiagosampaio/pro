@@ -3,5 +3,6 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://tiagosampaio.com',
+  site: 'https://tiagosampaio.github.io',
+  base: '/pro',
 });
