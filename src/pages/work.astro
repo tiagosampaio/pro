@@ -1,0 +1,324 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    num: '01',
+    brand: 'Classy Llama',
+    category: 'US Magento Agency · 2022 – Present',
+    title: 'Technical Lead for US Enterprise Commerce Clients',
+    desc: 'Currently leading development of key Magento 2 / Adobe Commerce projects at one of the most respected Magento agencies in the United States. Day-to-day mentorship of senior developers, complex architectural problem-solving, performance evaluation, and delivering quality on-budget solutions across multiple enterprise accounts.',
+    tags: ['Adobe Commerce', 'Technical Lead', 'Enterprise', 'Mentorship', 'USA'],
+    highlight: 'Leading engineer at a top US Magento agency',
+    year: '2022 – Present',
+    photo: 'classy-llama',
+  },
+  {
+    num: '02',
+    brand: 'B2W Digital',
+    category: 'Brazil\'s Largest E-commerce Group · 2015 – 2020',
+    title: 'Technology Manager & Solution Architect',
+    desc: 'Over 5 years at B2W Digital — the holding behind Americanas.com, Submarino and Shoptime, Brazil\'s biggest e-commerce group. Grew from PHP/Magento Solution Architect to Technology Manager, leading full technology teams, architecting features for high-traffic platforms, and implementing best practices across the organisation.',
+    tags: ['Magento', 'PHP', 'Tech Leadership', 'High Traffic', 'Americanas'],
+    highlight: "Brazil's largest e-commerce group",
+    year: '2015–2020',
+    photo: 'b2w-project',
+  },
+  {
+    num: '03',
+    brand: 'MagedIn Technology',
+    category: 'Founder · 2016 – Present',
+    title: 'Magento Extensions & Commerce Consulting',
+    desc: 'Founded MagedIn Technology in 2016 to build world-class Magento extensions and deliver consulting to merchants and agencies worldwide. The company produces high-quality open-source and commercial modules, and provides hands-on Magento architecture consulting.',
+    tags: ['Founder', 'Open Source', 'Magento Extensions', 'Consulting', 'Brazil'],
+    highlight: 'Extensions used by merchants worldwide',
+    year: '2016 – Present',
+    photo: 'magedin-project',
+  },
+  {
+    num: '04',
+    brand: 'Sephora Brazil',
+    category: 'Beauty Retail',
+    title: 'Replatforming Brazil\'s #1 Beauty Commerce',
+    desc: 'Architecture and delivery of Sephora\'s Brazilian e-commerce on Adobe Commerce. Led integrations with beauty loyalty programs, ERP, and omnichannel logistics — handling millions of monthly visitors with zero-downtime deployments.',
+    tags: ['Adobe Commerce', 'Multi-store', 'High Traffic', 'ERP Integration', 'Loyalty'],
+    highlight: 'Millions of monthly visitors',
+    year: '2022–2023',
+    photo: 'sephora-project',
+  },
+  {
+    num: '05',
+    brand: 'TIM Brazil',
+    category: 'Telecommunications',
+    title: 'Digital Commerce for Brazil\'s Major Telecom',
+    desc: 'Architected and delivered a high-complexity digital commerce experience for TIM, one of Brazil\'s largest telecoms. Deep customization for telecom plans and device catalog, subscription billing integration, and scalable AWS infrastructure.',
+    tags: ['Magento 2', 'AWS', 'Subscription Billing', 'Custom Catalog', 'Telecom'],
+    highlight: 'National-scale telecom platform',
+    year: '2020–2021',
+    photo: 'tim-project',
+  },
+  {
+    num: '06',
+    brand: 'John John / Lelis Blanc / Bobo',
+    category: 'Premium Fashion',
+    title: 'Fashion Commerce for Iconic Brazilian Brands',
+    desc: 'Led Magento 2 commerce platforms for multiple premium fashion brands. Focus on visual merchandising, complex size-based catalog management, performance optimization for Black Friday campaigns, and delivering luxury brand experiences online.',
+    tags: ['Magento 2', 'Fashion', 'Performance', 'Black Friday', 'Luxury'],
+    highlight: 'Multiple premium fashion brands delivered',
+    year: '2021–2022',
+    photo: 'fashion-project',
+  },
+  {
+    num: '07',
+    brand: 'Livraria Saraiva',
+    category: 'Books & Electronics',
+    title: 'Platform Modernization for a Retail Giant',
+    desc: 'Platform evolution for one of Brazil\'s largest book and electronics retailers. Marketplace integrations, complex pricing rules, inventory sync across hundreds of physical stores, and digital product delivery.',
+    tags: ['Magento', 'Marketplace', 'ERP', 'Multi-warehouse', 'Digital Products'],
+    highlight: 'Hundreds of stores integrated',
+    year: '2018–2019',
+    photo: 'saraiva-project',
+  },
+];
+---
+
+<Layout title="Work — Tiago Sampaio" description="Selected work by Tiago Sampaio — Technical Lead at Classy Llama, founder of MagedIn Technology, and former Technology Manager at B2W Digital. Projects for Sephora, TIM, John John, and more.">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <div class="page-hero__orb"></div>
+    </div>
+    <div class="container page-hero__content">
+      <div class="section-eyebrow" data-reveal>Selected Projects</div>
+      <h1 class="display-title" data-reveal data-delay="1">
+        Work that<br/>
+        <em>moves the needle.</em>
+      </h1>
+      <p class="body-lead" data-reveal data-delay="2" style="margin-top:24px">
+        15+ years of building commerce platforms that handle real load,
+        real complexity, and real business stakes — from Brazil's largest
+        e-commerce group to US enterprise agencies.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section">
+    <div class="container">
+      {projects.map((p, i) => (
+        <article class={`project-card ${i % 2 === 1 ? 'project-card--reverse' : ''}`} data-reveal>
+          <div class="project-card__visual">
+            <div class="project-card__img-wrap">
+              <!-- Replace with: <img src={`/images/${p.photo}.jpg`} alt={p.brand} /> -->
+              <div class="project-card__img-placeholder">
+                <span class="project-card__brand-initial">{p.brand[0]}</span>
+              </div>
+              <div class="project-card__year">{p.year}</div>
+            </div>
+          </div>
+
+          <div class="project-card__body">
+            <div class="project-card__meta">
+              <span class="project-card__num">{p.num}</span>
+              <span class="project-card__cat">{p.category}</span>
+            </div>
+            <h2 class="project-card__title">{p.title}</h2>
+            <p class="project-card__desc">{p.desc}</p>
+            <div class="project-card__highlight">
+              <span class="highlight-dot"></span>
+              {p.highlight}
+            </div>
+            <div class="project-card__tags">
+              {p.tags.map(t => <span class="ptag">{t}</span>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="stack-section">
+    <div class="container">
+      <div class="stack-inner" data-reveal>
+        <div class="section-eyebrow">Technology Stack</div>
+        <p class="body-lead" style="margin: 16px 0 40px">
+          The tools I reach for when building commerce at scale.
+        </p>
+        <div class="stack-grid">
+          {['PHP 8', 'Adobe Commerce', 'Magento 2', 'MySQL', 'Redis', 'Elasticsearch',
+            'Varnish', 'RabbitMQ', 'Docker', 'AWS', 'GraphQL', 'REST APIs',
+            'Git / GitHub', 'CI/CD', 'Kubernetes', 'Terraform', 'Nginx', 'PWA Studio'
+          ].map(t => (
+            <div class="stack-tag">{t}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="work-cta">
+    <div class="cta-band__glow"></div>
+    <div class="container">
+      <div class="work-cta__inner" data-reveal>
+        <h2 class="display-title">Your project<br/><em>could be next.</em></h2>
+        <a href="/contact" class="btn btn-primary">Let's Talk</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* PAGE HERO */
+.page-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  overflow: hidden;
+}
+.page-hero__bg { position: absolute; inset: 0; }
+.page-hero__orb {
+  position: absolute;
+  width: 600px; height: 600px;
+  top: -200px; right: -100px;
+  background: radial-gradient(circle, rgba(124,111,255,0.1), transparent 70%);
+  filter: blur(80px); border-radius: 50%;
+}
+.page-hero__content { position: relative; z-index: 1; }
+
+/* PROJECTS */
+.projects-section { padding: 80px 0 120px; }
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.project-card:last-child { border-bottom: none; }
+.project-card--reverse { direction: rtl; }
+.project-card--reverse > * { direction: ltr; }
+
+.project-card__img-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+.project-card__img-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(124,111,255,0.08) 0%, rgba(6,8,15,0.8) 100%);
+}
+.project-card__brand-initial {
+  font-size: 5rem; font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+.project-card__year {
+  position: absolute; bottom: 16px; right: 16px;
+  font-family: var(--mono); font-size: 0.7rem; color: var(--text-3);
+  letter-spacing: 0.1em;
+  background: rgba(6,8,15,0.8); padding: 4px 10px; border-radius: 4px;
+}
+
+.project-card__meta {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 20px;
+}
+.project-card__num {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--accent); letter-spacing: 0.08em;
+}
+.project-card__cat {
+  font-size: 0.72rem; color: var(--text-3);
+  font-family: var(--mono); letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-card__title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800; line-height: 1.2;
+  letter-spacing: -0.02em; color: var(--text);
+  margin-bottom: 20px;
+}
+
+.project-card__desc {
+  font-size: 0.9rem; color: var(--text-2);
+  line-height: 1.8; margin-bottom: 24px;
+}
+
+.project-card__highlight {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.82rem; color: var(--accent-2);
+  font-weight: 500; margin-bottom: 24px;
+}
+.highlight-dot {
+  width: 6px; height: 6px;
+  background: var(--accent); border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-glow);
+  flex-shrink: 0;
+}
+
+.project-card__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.ptag {
+  padding: 5px 12px;
+  background: rgba(124,111,255,0.08);
+  border: 1px solid rgba(124,111,255,0.18);
+  color: var(--text-2); border-radius: 4px;
+  font-size: 0.72rem; font-family: var(--mono);
+}
+
+/* STACK */
+.stack-section { padding: 80px 0 120px; }
+.stack-inner {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 56px;
+}
+.stack-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.stack-tag {
+  padding: 8px 18px;
+  background: rgba(124,111,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.8rem; font-family: var(--mono);
+  color: var(--text-2);
+  transition: all 0.25s;
+}
+.stack-tag:hover {
+  border-color: var(--accent); color: var(--accent-2);
+  background: rgba(124,111,255,0.12); transform: translateY(-2px);
+}
+
+/* CTA */
+.work-cta {
+  position: relative; padding: 120px 0;
+  border-top: 1px solid var(--border); overflow: hidden;
+}
+.cta-band__glow {
+  position: absolute; width: 800px; height: 500px;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  background: radial-gradient(ellipse, rgba(124,111,255,0.1), transparent 70%);
+  filter: blur(60px); pointer-events: none;
+}
+.work-cta__inner {
+  position: relative; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .project-card { grid-template-columns: 1fr; gap: 32px; }
+  .project-card--reverse { direction: ltr; }
+  .stack-inner { padding: 32px 24px; }
+}
+</style>

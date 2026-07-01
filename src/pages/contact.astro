@@ -1,0 +1,297 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Tiago Sampaio" description="Get in touch with Tiago Sampaio for Adobe Commerce consulting, e-commerce architecture, or project collaboration.">
+
+  <!-- PAGE HERO -->
+  <section class="contact-hero">
+    <div class="contact-hero__bg">
+      <div class="contact-hero__orb contact-hero__orb--1"></div>
+      <div class="contact-hero__orb contact-hero__orb--2"></div>
+      <div class="contact-hero__grid"></div>
+    </div>
+    <div class="container contact-hero__content">
+      <div class="section-eyebrow" data-reveal>Let's Talk</div>
+      <h1 class="display-title" data-reveal data-delay="1">
+        Start a<br/>
+        <em>conversation.</em>
+      </h1>
+      <p class="body-lead" data-reveal data-delay="2" style="margin-top:24px">
+        Whether you have a complex commerce challenge, want to discuss
+        a consulting engagement, or just want to say hello — my inbox is open.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT LAYOUT -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info & links -->
+        <div class="contact-info">
+          <div class="contact-availability" data-reveal>
+            <span class="avail-dot"></span>
+            <div>
+              <strong>Currently available</strong>
+              <p>for consulting & architecture engagements</p>
+            </div>
+          </div>
+
+          <div class="contact-links" data-reveal data-delay="1">
+            <a href="mailto:tiago@tiagosampaio.com" class="clink">
+              <div class="clink__icon">
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 5h14c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H3c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M2 6l8 5.5L18 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="clink__body">
+                <span class="clink__label">Email</span>
+                <span class="clink__val">tiago@tiagosampaio.com</span>
+              </div>
+              <span class="clink__arrow">↗</span>
+            </a>
+
+            <a href="https://linkedin.com/in/tsampaio" target="_blank" rel="noopener" class="clink">
+              <div class="clink__icon">
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 6.5a4 4 0 014 4V17h-3v-6a1 1 0 00-1-1 1 1 0 00-1 1v6h-3V7h3v1.5A4 4 0 0114 6.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 7h3v10H2zM3.5 5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="clink__body">
+                <span class="clink__label">LinkedIn</span>
+                <span class="clink__val">linkedin.com/in/tsampaio</span>
+              </div>
+              <span class="clink__arrow">↗</span>
+            </a>
+
+            <a href="https://github.com/tiagosampaio" target="_blank" rel="noopener" class="clink">
+              <div class="clink__icon">
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 2a8 8 0 00-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 014 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0010 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="clink__body">
+                <span class="clink__label">GitHub</span>
+                <span class="clink__val">github.com/tiagosampaio</span>
+              </div>
+              <span class="clink__arrow">↗</span>
+            </a>
+          </div>
+
+          <div class="contact-services" data-reveal data-delay="2">
+            <h3 class="contact-services__title">I can help with</h3>
+            <ul class="contact-services__list">
+              {[
+                'Adobe Commerce / Magento 2 architecture',
+                'Platform migrations & replatforming',
+                'Performance audits & optimization',
+                'Complex systems integration',
+                'Technical team leadership',
+                'Code review & consulting',
+              ].map(s => <li>{s}</li>)}
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="contact-form-wrap" data-reveal data-delay="2">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_ID" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic</option>
+                <option value="consulting">Commerce Consulting</option>
+                <option value="architecture">Architecture Review</option>
+                <option value="performance">Performance Audit</option>
+                <option value="integration">Integration Project</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or challenge..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <p class="form-note">
+              I typically respond within 24–48 hours.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* CONTACT HERO */
+.contact-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  overflow: hidden;
+}
+.contact-hero__bg { position: absolute; inset: 0; }
+.contact-hero__orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); pointer-events: none;
+}
+.contact-hero__orb--1 {
+  width: 500px; height: 500px;
+  top: -150px; left: -100px;
+  background: radial-gradient(circle, rgba(124,111,255,0.1), transparent 70%);
+}
+.contact-hero__orb--2 {
+  width: 400px; height: 400px;
+  bottom: -100px; right: 10%;
+  background: radial-gradient(circle, rgba(167,139,250,0.07), transparent 70%);
+}
+.contact-hero__grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(124,111,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,111,255,0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 80% at 20% 30%, black, transparent);
+}
+.contact-hero__content { position: relative; z-index: 1; }
+
+/* CONTACT LAYOUT */
+.contact-section { padding: 80px 0 120px; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 80px; align-items: start;
+}
+
+/* AVAILABILITY */
+.contact-availability {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(34,197,94,0.06);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+.avail-dot {
+  flex-shrink: 0; margin-top: 4px;
+  width: 9px; height: 9px;
+  background: #22c55e; border-radius: 50%;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.contact-availability strong { display: block; font-size: 0.9rem; color: var(--text); margin-bottom: 2px; }
+.contact-availability p { font-size: 0.8rem; color: var(--text-2); }
+
+/* CONTACT LINKS */
+.contact-links { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
+.clink {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 20px; border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: all 0.25s;
+}
+.clink:hover {
+  background: var(--bg-surface);
+  border-color: var(--border);
+}
+.clink:hover .clink__arrow { opacity: 1; transform: translate(2px,-2px); }
+.clink__icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: rgba(124,111,255,0.1); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+.clink__icon svg { width: 18px; height: 18px; }
+.clink__body { flex: 1; }
+.clink__label { display: block; font-size: 0.72rem; color: var(--text-3); font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
+.clink__val   { font-size: 0.875rem; color: var(--text-2); }
+.clink__arrow { color: var(--text-3); font-size: 1.1rem; opacity: 0; transition: all 0.25s; }
+
+/* SERVICES */
+.contact-services__title {
+  font-size: 0.72rem; font-family: var(--mono);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-3); margin-bottom: 16px;
+}
+.contact-services__list { display: flex; flex-direction: column; gap: 10px; }
+.contact-services__list li {
+  font-size: 0.875rem; color: var(--text-2);
+  padding-left: 16px; position: relative;
+}
+.contact-services__list li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--accent); font-size: 0.6rem; top: 3px;
+}
+
+/* FORM */
+.contact-form-wrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px;
+}
+.contact-form { display: flex; flex-direction: column; gap: 24px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label {
+  font-size: 0.78rem; font-family: var(--mono);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-2);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  padding: 14px 18px;
+  width: 100%;
+  transition: border-color 0.2s;
+  outline: none;
+  appearance: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-3); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--accent); }
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233d4a6a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.form-group select option { background: var(--bg-surface); }
+.form-group textarea { resize: vertical; min-height: 130px; }
+.form-submit { align-self: flex-start; }
+.form-note {
+  font-size: 0.75rem; color: var(--text-3);
+  font-family: var(--mono);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .contact-form-wrap { padding: 32px 24px; }
+}
+</style>

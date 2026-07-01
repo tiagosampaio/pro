@@ -1,0 +1,42 @@
+---
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-ts">TS</span><span class="logo-dot">.</span>
+      </a>
+      <p class="footer-copy">© {new Date().getFullYear()} Tiago Sampaio. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/tiagosampaio" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/tsampaio" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:tiago@tiagosampaio.com">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 0;
+    margin-top: 120px;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .nav-logo { display: flex; align-items: baseline; gap: 1px; }
+  .logo-ts { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); }
+  .logo-dot { font-size: 1.4rem; color: var(--accent); font-weight: 900; }
+  .footer-copy { font-size: 0.8rem; color: var(--text-3); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 0.82rem; color: var(--text-2); transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  @media (max-width: 600px) {
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>

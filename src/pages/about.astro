@@ -1,0 +1,474 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const certifications = [
+  { name: 'Adobe Certified Expert',          sub: 'Adobe Commerce Developer',        icon: '🏅' },
+  { name: 'Magento Front End Certified',     sub: 'Certified Developer',             icon: '🎖️' },
+  { name: 'Celigo Certified',                sub: 'Integration Engineer',            icon: '🔗' },
+  { name: 'Scrum Foundation Professional',   sub: 'Certificate (SFPC)',              icon: '📋' },
+];
+
+const timeline = [
+  {
+    year: '2022 – Now',
+    company: 'Classy Llama',
+    role: 'Technical Lead & Sr. Adobe Commerce Engineer',
+    location: 'Springfield, MO, USA (remote)',
+    desc: 'Leading development of key Magento 2 projects for US enterprise clients. Day-to-day mentorship of Magento developers, performance evaluation, solving complex architectural challenges, and producing reusable, on-budget solutions.',
+  },
+  {
+    year: '2016 – Now',
+    company: 'MagedIn Technology',
+    role: 'CEO & Founder',
+    location: 'São Paulo, Brazil',
+    desc: 'Founded and lead MagedIn Technology, a company specializing in Magento extensions, solutions, and consulting. Building high-quality open-source and commercial modules adopted by merchants worldwide.',
+  },
+  {
+    year: '2021',
+    company: 'GRAYBOX',
+    role: 'Magento Technical Architect — Enterprise Commerce',
+    location: 'Portland, OR, USA (remote)',
+    desc: 'Architected enterprise Magento 2 solutions for US clients. Mentored developers, identified and escalated risks, and delivered complex projects on schedule.',
+  },
+  {
+    year: '2020 – 2021',
+    company: 'McFadyen Digital',
+    role: 'Magento Technical Lead',
+    location: 'Brazil (remote)',
+    desc: 'Architected and proposed Magento solutions per client requirements, performed technical analysis, wrote clean modular code, and was actively involved in pre-sales activities through technical POCs.',
+  },
+  {
+    year: '2015 – 2020',
+    company: 'B2W Digital',
+    role: 'Technology Manager & PHP/Magento Solution Architect',
+    location: 'São Paulo, Brazil',
+    desc: 'Over 5 years at Brazil\'s largest e-commerce group (Americanas, Submarino, Shoptime). Grew from Solution Architect to Technology Manager, leading a full technology team, architecting new features, implementing best practices, and managing developers and project managers across high-traffic platforms.',
+  },
+  {
+    year: '2012 – 2015',
+    company: 'e-smart',
+    role: 'Software Development Manager & PHP/Magento Architect',
+    location: 'São Paulo, Brazil',
+    desc: 'Managed the Magento development team, architected and developed new features, implemented modern concepts and technologies to improve code quality, and trained developers on Magento Commerce best practices.',
+  },
+  {
+    year: '2011 – 2012',
+    company: 'Shoes4you / VBMagento',
+    role: 'PHP/Magento Architect',
+    location: 'São Paulo, Brazil',
+    desc: 'First deep Magento roles — module development, customizations, bug fixing, and full template builds on the Magento Commerce platform. The beginning of a career-defining specialization.',
+  },
+];
+---
+
+<Layout
+  title="About — Tiago Sampaio"
+  description="Adobe Certified Expert with 15+ years in e-commerce. Technical Lead at Classy Llama, founder of MagedIn Technology, and former Technology Manager at B2W Digital — Brazil's largest e-commerce group."
+>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <div class="page-hero__orb page-hero__orb--1"></div>
+      <div class="page-hero__orb page-hero__orb--2"></div>
+    </div>
+    <div class="container page-hero__content">
+      <div class="section-eyebrow" data-reveal>About Me</div>
+      <h1 class="display-title page-hero__title" data-reveal data-delay="1">
+        Developer.<br/>
+        <em>Leader. Founder.</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- PHOTO FEATURE -->
+  <section class="photo-feature">
+    <div class="photo-feature__grid container">
+      <div class="photo-feature__main" data-reveal>
+        <!-- Replace with: <img src="/images/about-main.jpg" alt="Tiago Sampaio" /> -->
+        <div class="img-placeholder img-placeholder--tall">
+          <span class="img-placeholder__label">Main portrait photo</span>
+        </div>
+        <div class="photo-feature__caption">
+          <span class="mono" style="font-size:0.7rem;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase">
+            Tiago Sampaio · São Paulo, Brazil
+          </span>
+        </div>
+      </div>
+
+      <div class="photo-feature__side">
+        <div class="photo-feature__bio" data-reveal data-delay="2">
+          <p class="body-lead">
+            I'm Tiago Sampaio — a Technical Lead and Adobe Certified Expert
+            in Magento 2 / Adobe Commerce, based in Brazil and working globally
+            for over 15 years in technology and e-commerce.
+          </p>
+          <p class="body-lead" style="margin-top:20px">
+            Currently I lead development at <strong>Classy Llama</strong> — one
+            of the most respected Magento agencies in the US — while also
+            running <strong>MagedIn Technology</strong>, the company I founded
+            in 2016 to build world-class Magento extensions and consulting.
+          </p>
+          <p class="body-lead" style="margin-top:20px">
+            Before going global, I spent 5+ years at <strong>B2W Digital</strong>
+            — Brazil's largest e-commerce group (Americanas, Submarino, Shoptime)
+            — rising from Solution Architect to Technology Manager. I left a
+            management role to return to what I'm truly made for: hands-on
+            engineering and solving hard problems.
+          </p>
+        </div>
+
+        <div class="photo-feature__side-imgs" data-reveal data-delay="3">
+          <div class="img-placeholder img-placeholder--sm">
+            <!-- <img src="/images/about-2.jpg" alt="" /> -->
+            <span class="img-placeholder__label">Office / workspace</span>
+          </div>
+          <div class="img-placeholder img-placeholder--sm">
+            <!-- <img src="/images/about-3.jpg" alt="" /> -->
+            <span class="img-placeholder__label">Conference / event</span>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="certs" data-reveal data-delay="4">
+          <h3 class="certs__title">Certifications</h3>
+          <div class="certs__grid">
+            {certifications.map(c => (
+              <div class="cert-item">
+                <span class="cert-item__icon">{c.icon}</span>
+                <div>
+                  <span class="cert-item__name">{c.name}</span>
+                  <span class="cert-item__sub">{c.sub}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="langs" data-reveal data-delay="5">
+          <h3 class="certs__title">Languages</h3>
+          <div class="langs__list">
+            <div class="lang-item">
+              <span class="lang-flag">🇧🇷</span>
+              <span class="lang-name">Portuguese</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇺🇸</span>
+              <span class="lang-name">English</span>
+              <span class="lang-level">Full Professional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy">
+    <div class="container">
+      <div class="philosophy-inner">
+        <div class="section-eyebrow" data-reveal>My Philosophy</div>
+        <blockquote class="philosophy-quote" data-reveal data-delay="1">
+          "I believe in following your heart and doing what you're truly made for.
+          For me, that's solving hard problems and crafting commerce systems that scale."
+        </blockquote>
+        <div class="philosophy-pillars">
+          {[
+            { icon: '⚡', title: 'Performance First',          desc: 'Every millisecond counts. I build systems optimized from the database query up to the CDN edge.' },
+            { icon: '♾️', title: 'Built to Scale',             desc: 'Architecture decisions made today should still serve you at 10x traffic tomorrow.' },
+            { icon: '🧩', title: 'Composition over Complexity', desc: 'Clean, modular code that teams can understand, extend, and maintain — not clever code that breaks.' },
+            { icon: '🤝', title: 'Business-aware Engineering',  desc: 'I speak both tech and boardroom. Solutions are measured by business outcomes, not just code quality.' },
+          ].map(p => (
+            <div class="pillar" data-reveal>
+              <span class="pillar__icon">{p.icon}</span>
+              <h3 class="pillar__title">{p.title}</h3>
+              <p class="pillar__desc">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-eyebrow" data-reveal>Career Path</div>
+      <h2 class="display-title" data-reveal data-delay="1">
+        15 years of<br/><em>building things.</em>
+      </h2>
+      <div class="timeline">
+        {timeline.map((item, i) => (
+          <div class="tline-item" data-reveal data-delay={String((i % 3) + 1)}>
+            <div class="tline-left">
+              <span class="tline-year">{item.year}</span>
+              <span class="tline-loc">{item.location}</span>
+            </div>
+            <div class="tline-dot"></div>
+            <div class="tline-content">
+              <h3 class="tline-company">{item.company}</h3>
+              <h4 class="tline-role">{item.role}</h4>
+              <p class="tline-desc">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS GRID -->
+  <section class="skills-section">
+    <div class="container">
+      <div class="section-eyebrow" data-reveal>Technical Skills</div>
+      <div class="skills-grid">
+        {[
+          { category: 'Commerce', items: ['Adobe Commerce (Magento 2)', 'Magento 1 (legacy)', 'Module Architecture', 'Service Contracts', 'Plugin / Observer / Event', 'Multi-store / Multi-website', 'B2B Commerce', 'PWA Studio'] },
+          { category: 'Backend',  items: ['PHP 8 / OOP & SOLID', 'Design Patterns', 'REST & GraphQL APIs', 'MySQL / MariaDB', 'Redis', 'Elasticsearch / OpenSearch', 'RabbitMQ', 'Celigo Integration'] },
+          { category: 'Infra',    items: ['Adobe Commerce Cloud', 'AWS (EC2, S3, CloudFront)', 'Docker / Docker Compose', 'Kubernetes', 'Varnish Cache', 'Nginx', 'CI/CD Pipelines', 'Terraform'] },
+          { category: 'Process',  items: ['Technical Architecture', 'Team Leadership', 'Developer Mentorship', 'Agile / Scrum', 'Pre-sales & POCs', 'Technical Documentation', 'Code Review', 'Risk Management'] },
+        ].map(g => (
+          <div class="skill-group" data-reveal>
+            <h3 class="skill-group__cat">{g.category}</h3>
+            <ul class="skill-group__list">
+              {g.items.map(item => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="container">
+      <div class="about-cta__inner" data-reveal>
+        <h2 class="display-title">Let's work<br/><em>together.</em></h2>
+        <div class="about-cta__actions">
+          <a href="/work" class="btn btn-outline">See My Work</a>
+          <a href="/contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* PAGE HERO */
+.page-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  overflow: hidden;
+}
+.page-hero__bg { position: absolute; inset: 0; }
+.page-hero__orb {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  filter: blur(80px);
+}
+.page-hero__orb--1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(124,111,255,0.1), transparent 70%);
+  top: -100px; right: -100px;
+}
+.page-hero__orb--2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(167,139,250,0.07), transparent 70%);
+  bottom: 0; left: 10%;
+}
+.page-hero__content { position: relative; z-index: 1; }
+
+/* PHOTO FEATURE */
+.photo-feature { padding: 80px 0 120px; }
+.photo-feature__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+.img-placeholder {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.img-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(124,111,255,0.05), transparent);
+}
+.img-placeholder--tall { height: 520px; }
+.img-placeholder--sm   { height: 180px; flex: 1; }
+.img-placeholder__label {
+  font-family: var(--mono); font-size: 0.68rem; color: var(--text-3);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px dashed rgba(124,111,255,0.3);
+  padding: 8px 14px; border-radius: 4px; position: relative;
+}
+.photo-feature__caption { margin-top: 12px; }
+.photo-feature__bio { margin-bottom: 32px; }
+.photo-feature__bio strong { color: var(--text); }
+.photo-feature__side-imgs { display: flex; gap: 12px; margin-bottom: 32px; }
+
+/* CERTIFICATIONS */
+.certs { margin-bottom: 32px; }
+.certs__title {
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text-3); margin-bottom: 16px;
+}
+.certs__grid { display: flex; flex-direction: column; gap: 10px; }
+.cert-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s;
+}
+.cert-item:hover { border-color: var(--border-h); }
+.cert-item__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.cert-item__name {
+  display: block; font-size: 0.875rem; font-weight: 600; color: var(--text);
+  margin-bottom: 2px;
+}
+.cert-item__sub {
+  font-size: 0.75rem; color: var(--text-3); font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+
+/* LANGUAGES */
+.langs { }
+.langs__list { display: flex; gap: 16px; }
+.lang-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  flex: 1;
+}
+.lang-flag { font-size: 1.2rem; }
+.lang-name { font-size: 0.875rem; font-weight: 600; color: var(--text); flex: 1; }
+.lang-level { font-size: 0.7rem; color: var(--text-3); font-family: var(--mono); white-space: nowrap; }
+
+/* PHILOSOPHY */
+.philosophy { padding: 80px 0 120px; }
+.philosophy-inner { max-width: 960px; margin: 0 auto; }
+.philosophy-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-style: italic; color: var(--text); line-height: 1.55;
+  border-left: 3px solid var(--accent);
+  padding-left: 32px; margin: 40px 0 64px;
+}
+.philosophy-pillars {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 32px;
+}
+.pillar {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 32px; transition: border-color 0.3s;
+}
+.pillar:hover { border-color: var(--border-h); }
+.pillar__icon  { font-size: 1.6rem; display: block; margin-bottom: 16px; }
+.pillar__title { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+.pillar__desc  { font-size: 0.875rem; color: var(--text-2); line-height: 1.7; }
+
+/* TIMELINE */
+.timeline-section { padding: 80px 0 120px; }
+.timeline-section .display-title { margin-bottom: 64px; }
+.timeline { display: flex; flex-direction: column; position: relative; }
+.timeline::before {
+  content: ''; position: absolute;
+  left: 160px; top: 0; bottom: 0;
+  width: 1px; background: var(--border);
+}
+.tline-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0 48px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start; position: relative;
+}
+.tline-item:last-child { border-bottom: none; }
+.tline-left { text-align: right; padding-top: 2px; padding-right: 32px; }
+.tline-year {
+  display: block; font-family: var(--mono); font-size: 0.78rem;
+  color: var(--accent); letter-spacing: 0.05em; margin-bottom: 4px;
+}
+.tline-loc {
+  display: block; font-size: 0.7rem; color: var(--text-3);
+  font-family: var(--mono); line-height: 1.4;
+}
+.tline-dot {
+  position: absolute; left: 160px; top: 36px;
+  transform: translate(-50%, 0);
+  width: 9px; height: 9px;
+  background: var(--accent); border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.tline-company {
+  font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 2px;
+}
+.tline-role {
+  font-size: 0.85rem; font-weight: 500; color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.tline-desc { font-size: 0.875rem; color: var(--text-2); line-height: 1.7; }
+
+/* SKILLS */
+.skills-section { padding: 80px 0 120px; }
+.skills-section .section-eyebrow { margin-bottom: 48px; }
+.skills-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+}
+.skill-group { background: var(--bg); padding: 32px; }
+.skill-group__cat {
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 20px;
+}
+.skill-group__list { display: flex; flex-direction: column; gap: 8px; }
+.skill-group__list li {
+  font-size: 0.875rem; color: var(--text-2);
+  padding-left: 14px; position: relative;
+}
+.skill-group__list li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--accent); font-size: 0.6rem; top: 3px;
+}
+
+/* ABOUT CTA */
+.about-cta { padding: 80px 0; border-top: 1px solid var(--border); }
+.about-cta__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 40px; flex-wrap: wrap;
+}
+.about-cta__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .photo-feature__grid { grid-template-columns: 1fr; }
+  .img-placeholder--tall { height: 360px; }
+  .philosophy-pillars { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: repeat(2,1fr); }
+  .timeline::before { left: 100px; }
+  .tline-item { grid-template-columns: 100px 1fr; }
+  .tline-left { padding-right: 0; }
+  .tline-dot  { left: 100px; }
+}
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .timeline::before { left: 0; display: none; }
+  .tline-item { grid-template-columns: 1fr; gap: 8px; }
+  .tline-left { text-align: left; padding-right: 0; }
+  .tline-dot  { display: none; }
+  .langs__list { flex-direction: column; }
+  .about-cta__inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
