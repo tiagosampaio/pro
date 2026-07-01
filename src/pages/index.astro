@@ -184,6 +184,59 @@ const brands = [
     </div>
   </section>
 
+  <!-- ░░ CERTIFICATION ░░ -->
+  <section class="cert-section">
+    <div class="container">
+      <div class="cert-inner" data-reveal>
+        <div class="cert-badge-wrap">
+          <a href="https://certification.adobe.com/credential/verify/017dbbf4-5e7b-11f1-be16-42010a400fe2" target="_blank" rel="noopener" class="cert-badge-link">
+            <img
+              src="/images/017dbbf4-5e7b-11f1-be16-42010a400fe2_badge.png"
+              alt="Adobe Certified Expert — Adobe Commerce Developer"
+              class="cert-badge-img"
+            />
+            <span class="cert-badge-verify">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L5 8.5 2 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Verify credential
+            </span>
+          </a>
+        </div>
+
+        <div class="cert-copy">
+          <div class="section-eyebrow">Adobe Certified Expert</div>
+          <h2 class="cert-title">
+            Certified expertise<br/>
+            <em>you can trust.</em>
+          </h2>
+          <p class="cert-desc">
+            Adobe Commerce certification isn't handed out — it demands deep, proven mastery
+            of the platform's architecture, development patterns, and best practices.
+            Working with a certified professional means your project is built on solid
+            foundations: less technical debt, fewer costly mistakes, and a platform
+            designed to grow with your business.
+          </p>
+          <ul class="cert-points">
+            <li>
+              <span class="cert-point-icon">✦</span>
+              <span>Architecture decisions grounded in platform standards, not guesswork</span>
+            </li>
+            <li>
+              <span class="cert-point-icon">✦</span>
+              <span>Code that Adobe's own guidelines would approve — maintainable and upgrade-safe</span>
+            </li>
+            <li>
+              <span class="cert-point-icon">✦</span>
+              <span>Performance, security, and scalability treated as first-class requirements</span>
+            </li>
+          </ul>
+          <a href="https://certification.adobe.com/credential/verify/017dbbf4-5e7b-11f1-be16-42010a400fe2" target="_blank" rel="noopener" class="btn btn-outline cert-btn">
+            Verify My Certification ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ░░ CTA BAND ░░ -->
   <section class="cta-band">
     <div class="cta-band__glow"></div>
@@ -480,6 +533,93 @@ const brands = [
 .etile-desc  { font-size: 0.85rem; color: var(--text-2); line-height: 1.7; }
 .expertise-cta { text-align: center; }
 
+/* CERTIFICATION */
+.cert-section {
+  padding: 80px 0 120px;
+  border-top: 1px solid var(--border);
+}
+.cert-inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.cert-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.cert-badge-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+.cert-badge-link:hover { transform: translateY(-4px); }
+.cert-badge-img {
+  width: 220px;
+  height: auto;
+  filter: drop-shadow(0 0 32px rgba(124,111,255,0.25));
+}
+.cert-badge-verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--accent-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(124,111,255,0.25);
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(124,111,255,0.06);
+}
+.cert-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+  margin: 16px 0 24px;
+}
+.cert-title em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--accent-2);
+}
+.cert-desc {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 580px;
+}
+.cert-points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+  list-style: none;
+}
+.cert-points li {
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.cert-point-icon {
+  color: var(--accent);
+  font-size: 0.6rem;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.cert-btn { align-self: flex-start; }
+
 /* CTA BAND */
 .cta-band {
   position: relative; padding: 120px 0; overflow: hidden;
@@ -508,5 +648,7 @@ const brands = [
   .expertise-list { grid-template-columns: 1fr; }
   .strip-grid { grid-template-columns: 1fr; padding: 0 20px; }
   .hero-badge { display: none; }
+  .cert-inner { grid-template-columns: 1fr; gap: 40px; }
+  .cert-badge-img { width: 160px; }
 }
 </style>
