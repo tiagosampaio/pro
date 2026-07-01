@@ -190,11 +190,16 @@ const brands = [
       <div class="cert-inner" data-reveal>
         <div class="cert-badge-wrap">
           <a href="https://certification.adobe.com/credential/verify/017dbbf4-5e7b-11f1-be16-42010a400fe2" target="_blank" rel="noopener" class="cert-badge-link">
-            <img
-              src="/images/017dbbf4-5e7b-11f1-be16-42010a400fe2_badge.png"
-              alt="Adobe Certified Expert — Adobe Commerce Developer"
-              class="cert-badge-img"
-            />
+            <div class="cert-badge-card">
+              <div class="cert-badge-card__orb"></div>
+              <div class="cert-badge-card__grid"></div>
+              <div class="cert-badge-card__ring"></div>
+              <img
+                src="/images/017dbbf4-5e7b-11f1-be16-42010a400fe2_badge.png"
+                alt="Adobe Certified Expert — Adobe Commerce Developer"
+                class="cert-badge-img"
+              />
+            </div>
             <span class="cert-badge-verify">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L5 8.5 2 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Verify credential
@@ -548,21 +553,72 @@ const brands = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 .cert-badge-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   text-decoration: none;
-  transition: transform 0.3s;
+  transition: transform 0.4s var(--ease-out-expo);
 }
-.cert-badge-link:hover { transform: translateY(-4px); }
+.cert-badge-link:hover { transform: translateY(-6px); }
+.cert-badge-link:hover .cert-badge-card__ring { animation-play-state: running; }
+
+.cert-badge-card {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(124,111,255,0.1) 0%, rgba(6,8,15,0.9) 60%);
+  border: 1px solid rgba(124,111,255,0.2);
+  box-shadow:
+    0 0 0 1px rgba(124,111,255,0.08),
+    0 24px 64px rgba(0,0,0,0.6),
+    0 0 80px rgba(124,111,255,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.cert-badge-card__orb {
+  position: absolute;
+  width: 200px; height: 200px;
+  top: -60px; left: -40px;
+  background: radial-gradient(circle, rgba(124,111,255,0.18), transparent 65%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+.cert-badge-card__grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(124,111,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,111,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  border-radius: 28px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+}
+.cert-badge-card__ring {
+  position: absolute;
+  width: 290px; height: 290px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-top-color: rgba(124,111,255,0.4);
+  border-right-color: rgba(167,139,250,0.2);
+  animation: spinRing 8s linear infinite paused;
+  pointer-events: none;
+}
+@keyframes spinRing { to { transform: rotate(360deg); } }
+.cert-badge-link:hover .cert-badge-card__ring { animation-play-state: running; }
+
 .cert-badge-img {
-  width: 220px;
+  width: 170px;
   height: auto;
-  filter: drop-shadow(0 0 32px rgba(124,111,255,0.25));
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
 }
 .cert-badge-verify {
   display: inline-flex;
@@ -577,6 +633,11 @@ const brands = [
   padding: 6px 14px;
   border-radius: 100px;
   background: rgba(124,111,255,0.06);
+  transition: background 0.2s, border-color 0.2s;
+}
+.cert-badge-link:hover .cert-badge-verify {
+  background: rgba(124,111,255,0.14);
+  border-color: rgba(124,111,255,0.45);
 }
 .cert-title {
   font-size: clamp(2rem, 3.5vw, 3rem);
